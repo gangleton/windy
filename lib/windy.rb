@@ -29,7 +29,7 @@ module Windy
 
   class Base
     def self.root
-      "http://data.cityofchicago.org"
+      "https://data.nola.gov"
     end
 
     attr_reader :connection
