@@ -1,7 +1,7 @@
 Windy
 ====================
 
-Windy is a Ruby module that allows you to easily interact with the [City of Chicago's Data Portal](http://data.cityofchicago.org/).
+This fork of Windy is a Ruby module that allows you to easily interact with the [City of New Orleans's Data Portal](http://data.nola.gov/).
 
 The city's datasets are hosted using the [Socrata](http://www.socrata.com/) software platform. This library serves as a convenience wrapper to interacting with [Socrata's Open Data API](http://dev.socrata.com/).
 
