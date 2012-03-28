@@ -8,7 +8,7 @@ describe Windy do
 
   describe "client_error" do
     it "should throw exception when invalid app_token is provided" do
-      stub_request(:get, "http://data.cityofchicago.org/api/views?limit=200&page=1").
+      stub_request(:get, "https://data.nola.gov/api/views?limit=200&page=1").
                    to_return(:status => 403, :body => fixture("invalid_app_token.json"), :headers => {'X-Error-Code' => 'permission_denied', 'X-Error-Message' => 'Invalid app_token specified'
                    })
 
@@ -18,9 +18,9 @@ describe Windy do
 
   describe ".views" do
     before do
-      stub_request(:get, "http://data.cityofchicago.org/api/views?limit=200&page=1").
+      stub_request(:get, "https://data.nola.gov/api/views?limit=200&page=1").
          to_return(:status => 200, :body => fixture("views.json"), :headers => {})
-      stub_request(:get, "http://data.cityofchicago.org/api/views?limit=200&page=2").
+      stub_request(:get, "https://data.nola.gov/api/views?limit=200&page=2").
         to_return(:status => 200, :body => "[]", :headers => {})
 
     end
@@ -47,7 +47,7 @@ describe Windy do
 
   describe ".rows" do
     before do
-      stub_request(:get, "http://data.cityofchicago.org/api/views/28km-gtjn/rows.json").
+      stub_request(:get, "https://data.nola.gov/api/views/28km-gtjn/rows.json").
          to_return(:status => 200, :body => fixture("rows.json"), :headers => {})
     end
 

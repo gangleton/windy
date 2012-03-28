@@ -8,11 +8,11 @@ require 'webmock/rspec'
 
 
 def a_get(path)
-  a_request(:get, 'http://data.cityofchicago.org/' + path)
+  a_request(:get, 'http://data.nola.gov/' + path)
 end
 
 def stub_get(path)
-  stub_request(:get, 'http://data.cityofchicago.org/' + path)
+  stub_request(:get, 'http://data.nola.gov/' + path)
 end
 
 def fixture_path
