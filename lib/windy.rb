@@ -5,7 +5,7 @@ module Windy
   VERSION = '0.1.1'
 
   class << self
-    attr_accessor :app_token, :debug
+    attr_accessor :app_token, :debug, :url
   end
 
   module Response
@@ -29,12 +29,12 @@ module Windy
 
   class Base
     def self.root
-      "https://data.nola.gov"
+      Windy.url || "https://data.nola.gov"
     end
 
     attr_reader :connection
 
-    def initialize
+    def initialize()
       @connection = Faraday.new(:url => self.class.root) do |builder|
         builder.use SocrataAppTokenMiddleware
         builder.use Windy::Response::RaiseClientError
